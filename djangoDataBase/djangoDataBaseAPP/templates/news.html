@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style1.css" %}"> 
+    <title>Post list</title>
+</head>
+<body>
+    <h1>Посты</h1>
+    {% for item in postlist %}
+    <div class = "post">
+        <p class = "post__title text">{{item.title}}</p>
+        <a href = {{item.url}} class = "post__url text">{{item.url}}</a>
+        <p class = "post__con text">{{item.content}}</p>
+        <p class = "post__check text">{{item.checked}}</p>
+    </div>
+    {% endfor %}
+    <button class = "create-post__btn"><a href="http://127.0.0.1:8000/createPost" class = "a-text">Добавить пост</a></button>
+</body> 
+</html>
